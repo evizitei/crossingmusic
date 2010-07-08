@@ -1,10 +1,11 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.0.beta4'
+gem 'haml'
 
-gem 'sqlite3-ruby', :require => 'sqlite3', :group=>:development
 gem 'pg', :group => :production
 
+gem 'sqlite3-ruby', :require => 'sqlite3', :group=>:development
 gem 'capybara', :group=>:development
 gem 'database_cleaner', :group=>:development
 gem 'cucumber-rails', :group=>:development
