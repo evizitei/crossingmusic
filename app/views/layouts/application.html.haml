@@ -1,0 +1,106 @@
+!!! XML
+!!!
+%html{:xmlns=>"http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{"http-equiv"=>"Content-Type",:content=>"text/html",:charset=>"utf-8"}
+    %title Crossing Music
+    =stylesheet_link_tag "styles","jquery.lightbox-0.5"
+    / start javascript for header slideshow
+    = javascript_include_tag "jquery","rails","jquery.slideshow"
+    :javascript
+      $(document).ready(function() {
+        setTimeout(function(){
+          $('.imageNavigation').slideShow({ interval: 3 });
+        },3000);
+      });
+    / end javascript for header slideshow 
+    /start lightbox code
+    = javascript_include_tag "jquery.lightbox-0.5.pack"
+    :javascript
+      $(function() {
+        $('.lightbox').lightBox();
+      });
+    / end lightbox code
+    = csrf_meta_tag 
+  %body
+    #wrapper
+      #header
+        #logo
+          %img{:src=>"/images/logo.gif",:alt=>"Logo",:width=>"225",:height=>"46"}
+        #menucontainer
+          %ul
+            %li
+              %a.current
+                Home 
+                %br
+                %span where it begins
+            %li
+              %a
+                About
+                %br
+                %span Earth Nature
+            %li
+              %a
+                Portfolio
+                %br
+                %span my work
+            %li
+              %a
+                Blog
+                %br
+                %span Articles &amp; Info
+            %li
+              %a
+                Contact
+                %br
+                %span Get in touch
+      #banner
+        .slide_container
+          .imageNavigation.slideShow
+            %ul.slides{:style=>"height:270px;"}
+              %li.slide{:style=>"position:absolute;"}
+                %img{:src=>"/images/banner_home.jpg",:width=>"889",:height=>"270",:alt=>"slide1"}
+              %li.slide{:style=>"position:absolute; display:none;"}
+                %img{:src=>"/images/banner_kookaburra.jpg",:border=>"0",:alt=>"slide2"}
+              %li.slide{:style=>"position:absolute; display:none;"}
+                %img{:src=>"/images/banner_mushrooms.jpg",:width=>"889",:height=>"270",:alt=>"slide3"}
+              %li.slide{:style=>"position:absolute; display:none;"}
+                %img{:src=>"/images/banner_waterfall.jpg",:border=>"0",:alt=>"slide4"}
+            %ul.navigation.white
+              %li
+                %a.page.selected{:href=>"javascript:void(0)"} 1
+              %li
+                %a.page{:href=>"javascript:void(0)"} 2
+              %li                                         
+                %a.page{:href=>"javascript:void(0)"} 3
+              %li                                         
+                %a.page{:href=>"javascript:void(0)"} 4
+        .menu
+          .icon
+            %img{:src=>"/images/icon_camera.gif",:alt=>"Camera",:width=>"30",:height=>"26"}
+          %ul.submenu
+            %li
+              %a{:href=>"#"} latest photos
+            %li 
+              %a{:href=>"#"} Landscape
+            %li 
+              %a{:href=>"#"} Animals
+            %li 
+              %a{:href=>"#"} macro
+            %li 
+              %a{:href=>"#"} urban
+            %li 
+              %a{:href=>"#"} panoramic
+            %li.last
+              %a{:href=>"#"} website design
+      #maincontent
+        =yield
+      %hr.clear
+    #footer
+      .left &copy; Company Name
+      .right
+        %a{:href=>"#"} Site map 
+        | 
+        %a{:href=>"#"} Privacy 
+        | 
+        %a{:href=>"#"} Contact Us
