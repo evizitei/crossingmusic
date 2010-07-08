@@ -1,4 +1,6 @@
 Crossingmusic::Application.routes.draw do |map|
+  match "/", :to => "main#home"
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
