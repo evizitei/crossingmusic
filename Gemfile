@@ -5,6 +5,14 @@ gem 'rails', '3.0.0.beta4'
 gem 'sqlite3-ruby', :require => 'sqlite3', :group=>:development
 gem 'pg', :group => :production
 
+gem 'capybara', :group=>:development
+gem 'database_cleaner', :group=>:development
+gem 'cucumber-rails', :group=>:development
+gem 'cucumber', :group=>:development
+gem 'rspec-rails', :group=>:development
+gem 'spork', :group=>:development
+gem 'launchy', :group=>:development
+  
 # Use unicorn as the web server
 # gem 'unicorn'
 
