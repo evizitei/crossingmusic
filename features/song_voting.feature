@@ -8,3 +8,6 @@ Feature: Voting on songs for recording at the crossing
       And I am on the homepage
     When I follow "Songs"
     Then I should see "Playlist"
+    When I follow "Home"
+    Then I should not see "Playlist"
+    

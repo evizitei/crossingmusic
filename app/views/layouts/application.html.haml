@@ -28,9 +28,10 @@
         #logo
           %img{:src=>"/images/logo.gif",:alt=>"Logo",:width=>"225",:height=>"46"}
         #menucontainer
+          / a class of ".current" on the a tag will highlight it as being current context
           %ul
             %li
-              %a.current
+              %a{:href=>"/"}
                 Home 
                 %br
                 %span where it begins
