@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.0.beta4'
 gem 'haml'
+gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 
 gem 'pg', :group => :production
 
@@ -13,6 +14,7 @@ gem 'cucumber', :group=>:development
 gem 'rspec-rails',">= 2.0.0.beta.13",:group=>:development
 gem 'spork', :group=>:development
 gem 'launchy', :group=>:development
+gem 'factory_girl_rails', :group=>:development
   
 # Use unicorn as the web server
 # gem 'unicorn'

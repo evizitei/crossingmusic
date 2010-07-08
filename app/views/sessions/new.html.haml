@@ -1,0 +1,12 @@
+.left 
+  %div{:style=>"clear:both"}
+    %h1 Login Here
+    -form_for @user_session do |f|
+      =f.error_messages
+      %fieldset.user_session
+        =f.label :email,"Email:"
+        =f.text_field :email
+        %br
+        =f.label :password,"Password:"
+        =f.password_field :password
+      =f.submit "Login"
