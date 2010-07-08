@@ -1,0 +1,256 @@
+Earth Nature
+
+Designed & Constructed by Hayley Crook (dtbaker)
+Created on: 6/11/09
+Contact Info: http://themeforest.net/user/dtbaker
+
+This theme is a clean and modern design with a right column for common content.  The design features a top horizontal menu, large photo for a slideshow, and submenu for categories.
+
+The Earth Nature theme is suited to a personal blog, designer, photographer or even a business website. 
+
+Thank you for purchasing my theme. If you have any questions that are beyond the scope of this help file, please feel free to email, via my user page contact form. Thanks so much! Also it would be great if you could rate this file on themeforest.
+
+--TABLE OF CONTENTS--
+
+A) File Structure
+B) HTML Structure & Key parts to edit
+C) CSS Files
+D) Google Maps 
+E) Forms
+F) Slide Show
+G) Lightbox popups
+H) Photoshop Instructions
+I) File credits
+
+
+------------------------------------------------------------------------------
+
+A) File Structure 
+
+
+/images 		- The images used in the constructed website
+/js			- The javascript files are used for the slideshow of images
+/css/styles.css		- All the css for the website layout
+about.html		- plain inside page
+blog.html		- blog layout example
+contact.html		- Design for the contact page
+formsubmit.php		- The file that processes the contact form and emails you.
+index.html		- The main layout template
+portfolio.html		- Design for the portfolio page
+sitemap.php		- A dynamic page that automatically shows all the pages in your website.
+thankyou.html		- the page displayed after the contact form is submitted
+
+------------------------------------------------------------------------------
+
+B) HTML Structure:
+
+This theme is a fixed layout with two columns. All of the information within the main content area is nested within a div with an class of "left". The sidebar's content is within a div with an class of "right". 
+
+The right_column can stay the same throughout the website or add new content for each page.
+
+- Logo: 
+The current logo size is 255px wide by 46 pixels high.  
+If you would like to resize the logo, open the index.html on line 54, change the width="255" height="46" to match your new image dimensions. You also need to update the "styles.css" file. On line 35 and 36 change the width:255px; height:46px; to match your new image dimensions.
+
+
+- Menu Change:
+The menu is built using a list styled with css. To change the names of the buttons simply edit what is in the <li></li>.
+For example: change Home to what you want to appear on the button, change the link from index.html to the file name of the page you are linking to.
+ 
+  <li><a href="index.html" class="current">Home <br /><span>where it begins</span></a></li>  The text within the <span></span> is the small text that appears under each menu button, keep it short.
+ 
+- To add a new button simply add a new <li></li> like this:
+
+  <li><a href="index.html" class="current">Home <br /><span>where it begins</span></a></li>
+        <li><a href="about.html">About <br /><span>Earth Nature</span></a></li>
+        <li><a href="portfolio.html">Portfolio<br /><span>my work</span></a></li>
+     
+- To change the font, color, size of the menu:
+Open the "Styles.css" file
+The styling is all done through the link on each button: #menucontainer ul li a {
+
+On line 65 you will find the following styles, 
+
+
+#menucontainer ul li a {
+	display:block;
+	margin:0px 1px;
+	padding:0px;
+	padding-top:0px;
+	padding-left:7px;
+	float:left;
+	text-transform:uppercase;
+	color:#ffffff;
+	width:91px; /*this makes each button even, change this number if your menu buttons are wider*/
+}
+
+
+Line 76 controls the style when you mouse over the link.
+
+
+-Latest News:
+
+This is a made from a outer wrapper box named class="news_box_container".  Within that is a thumbnail class="image" and a text section class="text".
+
+Duplicate the everything inside <div class="news_box_container"></div> to keep adding news.
+
+- Latest Tweets
+
+This is a suggested layout for displaying your twitter comments, alternatively this section can be used for customer testimonials.
+More information on integrating twitter in your website: http://tweet.seaofclouds.com/
+
+
+
+- Footer:
+The footer has a main div with an ID of #footer, inside are  2 floating divs .right and .left, there is a left box and right box for your information.
+To change the size and color go to line 201 in Styles.css.
+
+
+------------------------------------------------------------------------------
+
+C) CSS
+The CSS for this template is all in one file named styles.css. Each section of the website is separated by a comment in this order:
+
+/*Template Layout*/ This has the body, link colors, columns and footer
+/*Menu*/ the main menu at the top of the website
+/*start banner*/ the slideshow of images
+/*Main*/ the main text including the left and right columns
+/*General*/ Headings, horizontal rules
+/*News*/ the layout for the news boxes
+/*right column*/ all the boxes for the right hand column
+/*Portfolio*/ boxes for the portfolio page
+/*Contact*/ map and contact form
+
+
+The site structure is pretty straight forward, comments are throughout the CSS file to help you know what each part does.
+The main sections of the design are in an id="wrapper", this holds the site together and centers it on the page.
+The id="header" includes the logo and menu.
+The main content is separated into 2 columns: .left and .right
+And the id="footer" is inside the id wrapper.
+
+------------------------------------------------------------------------------
+
+D) Google Map:
+On the contact page there is a Google Map you will need to edit.
+
+1. first Go to http://code.google.com/apis/maps/signup.html to get an API key for your website. 
+An API key is a really long string of random characters. 
+
+You will get something that looks like this:
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=YOUR_API_KEY_HERE"
+      type="text/javascript"></script>
+
+2. Open your contact page
+3. scroll down to line number 124 and paste the API you received from google after the text "key="
+4. scroll down to line number 134 and change the address below to the one you want the marker to point to 
+5. scroll down to line number 146 and change the address below to the one you want displayed in the popup
+
+Thats it, the map wont display until you upload your website to the URL you submitted to google in step 1.
+
+More help here: http://dtbaker.com.au/random-bits/how-to-setup-simple-google-maps-on-your-website.html
+
+-Configuring the form:
+I have included a PHP formsubmit script that will process your form for you, you will need to edit this file:
+
+1. open formsubmit.php
+2. on line 5 give your form a subject
+3. on line 8 type the email the form will be sent to
+4. on line 13 type the name of your thank you page
+5. on line 17 these are the fields that are required before the form can be submitted
+6. on line 65 you have the option on pasting or including your header/design to make this page look like the rest of the website.
+7. on line 75 look for this comment  <!--insert your footer here--> and page the footer/design to make this page look like the rest of the website.
+
+Thats it, upload and test. NOTE: This will only work if PHP is enabled on your website hosting
+
+------------------------------------------------------------------------------
+
+E) Site Map
+
+A PHP site map has been included, this page automatically displays every page in your website as a list. It's great for search engines and helps users navigate your website.
+
+On line 66 type the extensions you want to display, like .html or .htm or .php, this only supports 1 type of file extension. 
+
+You need to replace the header design on the page up to <!--start site map code--> and insert the footer after <!--end site map code-->
+
+------------------------------------------------------------------------------
+
+f) Slide Show
+
+The slide show used jQuery to animate the photos.
+
+In each HTML file on line 36 is a Unordered List (UL) this contains the 4 photos to be shown.
+
+<li class="slide" style="position:absolute;"><img src="images/banner_home.jpg" width="889" height="270" alt="slide1" /></li>  
+
+Simply change the image name from images/banner_home.jpg to the name of your image. New images can be made using the photoshop files provided.
+As you add more images more numbers will appear.
+
+------------------------------------------------------------------------------
+G) Lightbox popups
+
+On the portfolio page you can click on a thumbnail to enlarge the photo. This is done using a lightbox plugin.
+
+To make more add: class="lightbox" to your image links.
+And add a title for a caption to appear under your image in the popup: title="Image Title 1"
+
+Example:
+<a href="images/portfolio.jpg" title="Image Title 1" class="lightbox"><img src="images/portfolio_thumb.jpg" border="0" alt="1" /></a>
+
+------------------------------------------------------------------------------
+
+G) Photoshop Instructions
+
+The Photoshop documents have the slices required to build the layout, simply make the change in photoshop, hide any unnecessary layers and then file>"save for web".
+
+There is a photoshop file for each page in the website.
+
+The photoshop files contains clearly named folders for each part of the website.
+
+To make images for your slideshow follow these steps:
+
+1. Open the photo you want to use in photoshop
+2. resize your photo to 889pixels wide
+3. Press ctrl and A on the keyboard to select all of your photo
+4. press ctrl C to copy the photo
+5. open banner_photos.psd
+6. Click on the layer named "Photo"
+7. Press ctrl and V to paste, position your photo with the mouse.
+8. Now save your image - go to File>Save as
+9. Select JPG
+10. Save your photo into the images/ folder.
+
+------------------------------------------------------------------------------
+
+
+H) File Credits
+
+
+Stock Items Source:
+
+-- Font: 
+
+Century Gothic (included with windows)
+Trebuchet MS (included with windows)
+
+-- Photoshop Shape:
+
+Camera - default photoshop shape
+
+
+-- Little bird:
+
+http://weblog.404creative.com/2008/12/20/free-vector-twitter-icons/
+
+-- Photos:
+
+All photos were taken by me and are released under creative commons 3.0
+
+Jquery Slideshow:
+http://code.marceleichner.de/project/jquery.slideShow/
+
+jQuery Light Box:
+http://www.lokeshdhakar.com/projects/lightbox2/
+
+
+My username on ThemeForest is: DTBAKER
+

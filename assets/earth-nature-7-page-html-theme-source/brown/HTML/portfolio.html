@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Portfolio</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+
+<!-- start javascript for header slideshow -->
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.slideshow.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		setTimeout(function(){
+		$('.imageNavigation').slideShow({
+			interval: 3
+		});
+		},3000);
+	});
+</script>
+<!-- end javascript for header slideshow -->
+
+<!-- start lightbox code -->
+<link rel="stylesheet" href="css/jquery.lightbox-0.5.css" type="text/css" />
+<script type="text/javascript" src="js/jquery.lightbox-0.5.pack.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('.lightbox').lightBox();
+});
+</script>
+<!-- end lightbox code -->
+<!--[if IE 6]>
+<style type="text/css">
+#menucontainer {
+	float:right;
+	width: 525px;
+}
+ul.navigation {
+	width:130px;
+	margin:5px 0px 0 700px;
+    position:absolute;
+    float:left;
+}
+.submenu {
+	float:left;
+	width:560px;
+	margin:7px 0 0 10px;
+}
+</style>
+<![endif]-->
+</head>
+<body>
+<div id="wrapper">
+  <div id="header">
+    <div id="logo"><img src="images/logo.gif" alt="Logo" /></div>
+    <!--end logo-->
+    <!--start main menu-->
+    <div id="menucontainer">
+      <ul>
+        <li><a href="index.html" >Home <br />
+          <span>where it begins</span></a></li>
+        <li><a href="about.html">About <br />
+          <span>Earth Nature</span></a></li>
+        <li><a href="portfolio.html" class="current">Portfolio <br />
+          <span>my work</span></a></li>
+        <li><a href="blog.html">Blog <br />
+          <span>Articles &amp; Info</span></a></li>
+        <li><a href="contact.html">Contact <br />
+          <span>Get in touch</span></a></li>
+      </ul>
+    </div>
+    <!--end main menu-->
+  </div>
+  <!--end header-->
+  <!--start banner-->
+  <div id="banner">
+    <div class="slide_container">
+      <div class="imageNavigation slideShow">
+        <ul class="slides" style="height:270px;">
+          <li class="slide" style="position:absolute;"><img src="images/banner_mushrooms.jpg" width="889" height="270" alt="slide1" /></li>
+          <li class="slide" style="position:absolute; display:none;"><img src="images/banner_kookaburra.jpg" border="0" alt="slide2" /></li>
+          <li class="slide" style="position:absolute; display:none;"><img src="images/banner_home.jpg" width="889" height="270" alt="slide3" /></li>
+          <li class="slide" style="position:absolute; display:none;"><img src="images/banner_waterfall.jpg" border="0" alt="slide4" /></li>
+        </ul>
+        <ul class="navigation white">
+          <li><a href="javascript:void(0);" class="page selected">1</a></li>
+          <li><a href="javascript:void(0);" class="page">2</a></li>
+          <li><a href="javascript:void(0);" class="page">3</a></li>
+          <li><a href="javascript:void(0);" class="page">4</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="menu">
+      <div class="icon"><img src="images/icon_camera.gif" alt="Camera" width="30" height="26" /></div>
+      <ul class="submenu">
+      	<li><a href="#">latest photos</a></li>
+        <li><a href="#">Landscape</a></li>
+        <li><a href="#">Animals</a></li>
+        <li><a href="#">macro</a></li>
+        <li><a href="#">urban</a></li>
+        <li><a href="#">panoramic</a></li>
+        <li class="last"><a href="#">website design</a></li>
+       </ul>
+    </div>
+  </div>
+  <!--end banner-->
+  <div id="maincontent">
+    <h1>Portfolio &gt; Latest Photos</h1>
+    <!-- portfolio 1-->
+    <div class="portfolio_box margin_right">
+      <div class="image"><a href="images/portfolio.jpg" title="Image Title 1" class="lightbox"><img src="images/portfolio_thumb.jpg" border="0" alt="1" /></a></div>
+      <div class="title">Orange Butterfly</div>
+      <div class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div>
+      <div class="date">September 20, 2009  |  Category: Animals</div>
+    </div> <!--End portfolio 1-->
+    
+      <!-- portfolio 2-->
+    <div class="portfolio_box margin_right">
+      <div class="image"><a href="images/portfolio_2.jpg" title="Image Title 1" class="lightbox"><img src="images/portfolio_thumb_2.jpg" alt="1" width="261" height="173" border="0" /></a></div>
+      <div class="title">Byron Bay</div>
+      <div class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div>
+      <div class="date">September 20, 2009  |  Category: Animals</div>
+    </div> <!--End portfolio 2-->
+      <!-- portfolio 3-->
+    <div class="portfolio_box">
+      <div class="image"><a href="images/portfolio_3.jpg" title="Image Title 1" class="lightbox"><img src="images/portfolio_thumb_3.jpg" alt="1" border="0" /></a></div>
+      <div class="title">Jelly Fish</div>
+      <div class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div>
+      <div class="date">September 20, 2009  |  Category: Animals</div>
+    </div> <!--End portfolio 3-->
+      <!-- portfolio 4-->
+    <div class="portfolio_box margin_right">
+      <div class="image"><a href="images/portfolio_4.jpg" title="Image Title 1" class="lightbox"><img src="images/portfolio_thumb_4.jpg" alt="1" border="0" /></a></div>
+      <div class="title">Eiffle Tower</div>
+      <div class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div>
+      <div class="date">September 20, 2009  |  Category: Animals</div>
+    </div> <!--End portfolio 4-->
+      <!-- portfolio 5-->
+    <div class="portfolio_box margin_right">
+      <div class="image"><a href="images/portfolio_5.jpg" title="Image Title 1" class="lightbox"><img src="images/portfolio_thumb_5.jpg" alt="1" border="0" /></a></div>
+      <div class="title">Rhino</div>
+      <div class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div>
+      <div class="date">September 20, 2009  |  Category: Animals</div>
+    </div> <!--End portfolio 5-->
+      <!-- portfolio 6-->
+    <div class="portfolio_box">
+      <div class="image"><a href="images/portfolio_6.jpg" title="Image Title 1" class="lightbox"><img src="images/portfolio_thumb_6.jpg" alt="1" border="0" /></a></div>
+      <div class="title">Hippo</div>
+      <div class="description">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</div>
+      <div class="date">September 20, 2009  |  Category: Animals</div>
+    </div> <!--End portfolio 6-->
+    
+    <div class="bottom_bar">
+   
+    
+        <div class="view_all"> <a href="#"><img src="images/button_view_all.gif" alt="View All" width="111" height="21" border="0" /></a></div> <div class="buttons"> <a href="#"><img src="images/button_back.gif" alt="Back" border="0" /></a> &nbsp; &nbsp; &nbsp;<a href="#"><img src="images/button_next.gif" alt="Next" border="0" /></a></div>
+    </div>
+    
+  </div>
+  <!--end main content-->
+  <hr class="clear" />
+</div>
+<div id="footer">
+  <div class="left">&copy; Company Name</div>
+  <div class="right"><a href="sitemap.php">Site map</a> | <a href="#">Privacy</a> | <a href="contact.html">Contact Us</a></div>
+</div>
+<!--end footer-->
+
+</body>
+</html>
