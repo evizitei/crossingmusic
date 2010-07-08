@@ -9,7 +9,7 @@ gem 'capybara', :group=>:development
 gem 'database_cleaner', :group=>:development
 gem 'cucumber-rails', :group=>:development
 gem 'cucumber', :group=>:development
-gem 'rspec-rails', :group=>:development
+gem 'rspec-rails',">= 2.0.0.beta.13",:group=>:development
 gem 'spork', :group=>:development
 gem 'launchy', :group=>:development
   
