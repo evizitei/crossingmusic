@@ -11,9 +11,4 @@ describe "songs/index.html.erb" do
       )
     ])
   end
-
-  it "renders a list of songs" do
-    render
-    rendered.should have_selector("tr>td", :content => "Name".to_s, :count => 2)
-  end
 end

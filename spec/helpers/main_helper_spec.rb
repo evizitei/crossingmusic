@@ -10,6 +10,6 @@ require 'spec_helper'
 #     end
 #   end
 # end
-describe MainsHelper do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe MainHelper do
+  #pending "add some examples to (or delete) #{__FILE__}"
 end
