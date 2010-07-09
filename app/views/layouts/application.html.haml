@@ -42,16 +42,6 @@
                 %br
                 %span cast your vote
             %li
-              %a
-                Blog
-                %br
-                %span Articles &amp; Info
-            %li
-              %a
-                Contact
-                %br
-                %span Get in touch
-            %li
               -if current_user
                 %a{:href=>logout_path}
                   Logout
@@ -87,20 +77,8 @@
           .icon
             %img{:src=>"/images/icon_camera.gif",:alt=>"Camera",:width=>"30",:height=>"26"}
           %ul.submenu
-            %li
-              %a{:href=>"#"} latest photos
-            %li 
-              %a{:href=>"#"} Landscape
-            %li 
-              %a{:href=>"#"} Animals
-            %li 
-              %a{:href=>"#"} macro
-            %li 
-              %a{:href=>"#"} urban
-            %li 
-              %a{:href=>"#"} panoramic
-            %li.last
-              %a{:href=>"#"} website design
+            / %li
+            /  %a{:href=>"#"} latest photos
       #maincontent
         =yield
       %hr.clear
