@@ -52,10 +52,16 @@
                 %br
                 %span Get in touch
             %li
-              %a{:href=>login_path}
-                Login
-                %br
-                %span Team Members
+              -if current_user
+                %a{:href=>logout_path}
+                  Logout
+                  %br
+                  %span= current_user.name
+              -else
+                %a{:href=>login_path}
+                  Login
+                  %br
+                  %span Team Members
       #banner
         .slide_container
           .imageNavigation.slideShow

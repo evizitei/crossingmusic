@@ -9,4 +9,15 @@ Feature:  The administrative area should require a login
       And I follow "Login"
       And I fill in "Email:" with "david.cover@crossing.com"
       And I fill in "Password:" with "kingdomcome"
-    Then I should see "Hi again, David!"
+      And I press "Login"
+    Then I should see "David"
+    
+  Scenario: Logging Out
+    Given I am logged in as "David"
+      And I am on the homepage
+      And I should not see "Login"
+      And I should see "David"
+    When I follow "Logout"
+    Then I should be on the homepage
+      And I should not see "David"
+      And I should see "Login"
