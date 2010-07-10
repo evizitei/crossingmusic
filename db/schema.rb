@@ -9,12 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100708200816) do
+ActiveRecord::Schema.define(:version => 20100709235730) do
 
   create_table "songs", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "recording_file_name"
+    t.string   "recording_content_type"
+    t.integer  "recording_file_size"
+    t.datetime "recording_updated_at"
   end
 
   create_table "users", :force => true do |t|
