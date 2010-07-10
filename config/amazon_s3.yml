@@ -1,0 +1,14 @@
+development:
+  bucket_name: crossingmusic_dvlp
+  access_key_id: AKIAJUFMTVFS7EEOU3XA
+  secret_access_key: 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
+
+test:
+  bucket_name: crossingmusic_test
+  access_key_id: AKIAJUFMTVFS7EEOU3XA
+  secret_access_key: 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
+
+production:
+  bucket_name: crossingmusic_prod
+  access_key_id: AKIAJUFMTVFS7EEOU3XA
+  secret_access_key: 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
