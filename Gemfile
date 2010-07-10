@@ -18,6 +18,7 @@ gem 'shoulda',:group=>:development
 gem 'spork', :group=>:development
 gem 'launchy', :group=>:development
 gem 'factory_girl_rails', :group=>:development
+#gem 'redgreen',:group=>:test
   
 # Use unicorn as the web server
 # gem 'unicorn'
