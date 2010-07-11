@@ -1,6 +1,8 @@
 .left
   %h1 The Crossing Playlist
-  %p  We want you to participate in helping us decide what music to play! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis facilisis dapibus tincidunt. Aliquam non mauris ac urna pretium malesuada. Mauris viverra fringilla lectus, nec congue neque adipiscing ultrices. Nulla vel magna in leo mattis congue in eget quam. Proin dignissim nunc vitae nunc euismod sollicitudin. Nullam pretium placerat eleifend. Aliquam erat volutpat. Nunc et massa nisl, lacinia pharetra eros. In sit amet augue a ante tincidunt viverra. Sed magna nibh, condimentum nec dictum in, tempor eget turpis. Vivamus odio erat, pulvinar vel bibendum at, faucibus ut libero. Donec porta, purus ac hendrerit interdum, orci enim sodales libero, eget blandit nulla tortor vitae nisl. Duis vel purus lorem.
+  -if current_user
+    =button_to "Add a Song",new_song_path
+  %p  We want you to participate in helping us decide what music to play! 
 .right
   .side_box
     .title

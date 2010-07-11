@@ -21,3 +21,10 @@ Feature:  The administrative area should require a login
     Then I should be on the homepage
       And I should not see "David"
       And I should see "Login"
+      
+  Scenario: Should only be able to add a song if you're logged in
+    Given I am on the songs page
+      And I should not see "Add a Song"
+    When I am logged in as "David"
+      And I am on the songs page
+    Then I press "Add a Song"
