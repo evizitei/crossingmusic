@@ -39,3 +39,7 @@ end
 #include Factory Girl
 require 'factory_girl_rails'
 Factory.find_definitions
+
+require 'fakeweb'
+require 'shoulda'
+require File.expand_path(File.dirname(__FILE__) + '/../../test/shoulda_macros/paperclip')
