@@ -1,0 +1,10 @@
+.left
+  %h1 New Song
+  =form_for @song do |f|
+    %fieldset.song
+      =f.label :name,"Name:"
+      =f.text_field :name
+      %br
+      =f.label :recording,"recording"
+      =f.file_field :recording
+    =f.submit "Save"

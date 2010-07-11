@@ -13,3 +13,13 @@ Feature: managing the current list of songs
     Then I should see "Come as you are"
       And I should see "here I am to worship"
       And I should see "In Christ Alone"
+      
+  Scenario: Adding a song
+    Given I am logged in as "David"
+      And I am on the songs page
+    When I press "Add a Song"
+      And I fill in "Name:" with "Some New Song"
+      And I attach a "recording" "mp3" file to a "song" on S3
+      And I press "Save"
+    Then I should be on the songs page
+      And I should see "Some New Song"
