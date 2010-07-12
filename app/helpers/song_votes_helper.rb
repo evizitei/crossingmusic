@@ -1,0 +1,2 @@
+module SongVotesHelper
+end

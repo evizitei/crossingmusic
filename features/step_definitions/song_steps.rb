@@ -2,6 +2,10 @@ Given /^there is a song called "([^"]*)"$/ do |name|
   Factory(:song,:name=>name)
 end
 
+Given /^the song "([^"]*)" should have (\d+) (positive|neutral|negative) vote(?:|s)$/ do |name,count,type|
+  assert_equal count.to_i,Song.find_by_name(name).song_votes.positive.size
+end
+
 Then /^I should see an mp3 widget for the song "([^"]*)"$/ do |song_name|
   page.should have_css("#mp3_widget")
 end

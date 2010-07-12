@@ -1,4 +1,6 @@
 Crossingmusic::Application.routes.draw do |map|
+  resources :song_votes
+
   resources :users,:songs,:user_sessions
 
   match "/", :to => "main#home"
