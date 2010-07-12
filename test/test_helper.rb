@@ -5,6 +5,13 @@ require 'rails/test_help'
 require 'shoulda'
 require "shoulda_macros/paperclip"
 
+#include Factory Girl
+require 'factory_girl_rails'
+Factory.find_definitions
+
+#authlogic support
+require "authlogic/test_case"
+
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
   #
