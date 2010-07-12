@@ -10,5 +10,5 @@
       .icon
         %img{:src=>"/images/icon_eighth_note.gif",:alt=>"twitter",:width=>"26",:height=>"26"}
     -@songs.each do |song|
-      .song= song.name
+      .song=link_to song.name,song
     %hr.clear
