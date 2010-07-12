@@ -35,12 +35,16 @@
                 Home 
                 %br
                 %span where it begins
-            
             %li
               %a{:href=>songs_path}
                 Songs 
                 %br
                 %span cast your vote
+            %li
+              %a{:href=>"/about"}
+                About 
+                %br
+                %span who we are
             %li
               -if current_user
                 %a{:href=>logout_path}

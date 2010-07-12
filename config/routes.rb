@@ -2,6 +2,7 @@ Crossingmusic::Application.routes.draw do |map|
   resources :users,:songs,:user_sessions
 
   match "/", :to => "main#home"
+  match "/about", :to => "main#about"
   match "login" => "user_sessions#new",:as=>:login
   match "logout" => "user_sessions#destroy",:as=>:logout
   # The priority is based upon order of creation:
