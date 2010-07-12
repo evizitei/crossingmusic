@@ -18,4 +18,13 @@ Feature: Voting on songs for recording at the crossing
     When I follow "Come as you are"
     Then I should see an mp3 widget for the song "Come as you are"
     
+  Scenario: Navigating to another song
+    Given I am an unknown user
+      And there is a song called "Come as you are"
+      And there is a song called "Creator King"
+      And I am on the songs page 
+    When I follow "Come as you are"
+      And I follow "Creator King"
+    Then I should see an mp3 widget for the song "Creator King"
+    
     

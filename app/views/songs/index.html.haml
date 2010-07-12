@@ -3,12 +3,4 @@
   -if current_user
     =button_to "Add a Song",new_song_path
   %p  We want you to participate in helping us decide what music to play! 
-.right
-  .side_box
-    .title
-      %div{:style=>"float:left; width:100px;"} Playlist
-      .icon
-        %img{:src=>"/images/icon_eighth_note.gif",:alt=>"twitter",:width=>"26",:height=>"26"}
-    -@songs.each do |song|
-      .song=link_to song.name,song
-    %hr.clear
+.right=render :partial=>"playlist"

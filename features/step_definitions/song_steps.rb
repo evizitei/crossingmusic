@@ -3,5 +3,5 @@ Given /^there is a song called "([^"]*)"$/ do |name|
 end
 
 Then /^I should see an mp3 widget for the song "([^"]*)"$/ do |song_name|
-  page.should have_content(".swf")
+  page.should have_css("#mp3_widget")
 end

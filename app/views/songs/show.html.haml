@@ -2,3 +2,4 @@
   .song_player
     #title= @song.name
     #mp3_widget= raw(mp3_player @song.recording.url,:autostart =>true)
+.right=render :partial=>"playlist"

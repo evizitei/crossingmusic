@@ -13,6 +13,7 @@ class SongsController < ApplicationController
   # GET /songs/1
   # GET /songs/1.xml
   def show
+    @songs = Song.all
     @song = Song.find(params[:id])
 
     respond_to do |format|
