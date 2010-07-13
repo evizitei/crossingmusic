@@ -40,11 +40,12 @@ class SongVotesController < ApplicationController
   # POST /song_votes
   # POST /song_votes.xml
   def create
+    @song = Song.find(params[:song_id])
     @song_vote = SongVote.new(params[:song_vote])
 
     respond_to do |format|
       if @song_vote.save
-        format.html { redirect_to(@song_vote, :notice => 'Song vote was successfully created.') }
+        format.html { redirect_to(@song.next) }
         format.xml  { render :xml => @song_vote, :status => :created, :location => @song_vote }
       else
         format.html { render :action => "new" }

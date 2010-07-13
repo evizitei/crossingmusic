@@ -7,5 +7,6 @@ Given /^the song "([^"]*)" should have (\d+) (positive|neutral|negative) vote(?:
 end
 
 Then /^I should see an mp3 widget for the song "([^"]*)"$/ do |song_name|
+  Then %Q{I should be on the song voting page for #{song_name}}
   page.should have_css("#mp3_widget")
 end

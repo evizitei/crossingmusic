@@ -35,7 +35,7 @@ Feature: Voting on songs for recording at the crossing
       And the song "Come as you are" should have 0 positive votes
     When I follow "Come as you are"
       And I press "Love it!"
-    Then I should be on the song page for "Creator King"
+    Then I should be on the song voting page for Creator King
       And the song "Come as you are" should have 1 positive vote
     
     

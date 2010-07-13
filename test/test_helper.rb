@@ -20,4 +20,11 @@ class ActiveSupport::TestCase
   #fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def assert_contains(collection,item)
+    assert_not_nil collection.index(item)
+  end
+  
+  def assert_does_not_contain(collection,item)
+    assert_nil collection.index(item)
+  end
 end
