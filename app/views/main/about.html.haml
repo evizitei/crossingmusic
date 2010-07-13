@@ -1,13 +1,12 @@
 .left
   %h1 Who is The Crossing Music
-  %p David A Cover - on staff at The Crossing, leads Corporate Worship, and runs sound
-  %p Scott Johnson - on staff at The Crossing, leads Corporate Worship, and makes video resources
-  %p Andrew Camp - an intern who attends the University of Missouri as an undergrad
-  %p Christine Cover - an intern who attends the University of Missouri as an undergrad
-  %p Andrew Luley - an intern who is in graduate school at the University of Missouri
-  %p Rhett Johnson - volunteer who is a musician on the team and helps lead corporate worship as well
-  %p Ethan Vizitei - volunteer musician and the one responsible for making this website exist
-  %p Tim Worstell - on staff at The Crossing making problems go away and running sound
-  %hr.clear
+  =render :partial=>"news_box",:locals=>{:pic_name=>"bio_david.jpg",:name=>"David A Cover",:description=>"on staff at The Crossing, leads Corporate Worship, and runs sound"}
+  =render :partial=>"news_box",:locals=>{:pic_name=>"bio_scott.jpg",:name=>"Scott Johnson",:description=>"on staff at The Crossing, leads Corporate Worship, and makes video resources"}
+  =render :partial=>"news_box",:locals=>{:pic_name=>"bio_camp.jpg",:name=>"Andrew Camp",:description=>"an intern who attends the University of Missouri as an undergrad"}
+  =render :partial=>"news_box",:locals=>{:pic_name=>"bio_christine.jpg",:name=>"Christine Cover",:description=>"an intern who attends the University of Missouri as an undergrad"}
+  =render :partial=>"news_box",:locals=>{:pic_name=>"bio_luley.jpg",:name=>"Andrew Luley",:description=>"an intern who is in graduate school at the University of Missouri"}
+  =render :partial=>"news_box",:locals=>{:pic_name=>"bio_rhett.jpg",:name=>"Rhett Johnson",:description=>"volunteer who is a musician on the team and helps lead corporate worship as well"}
+  =render :partial=>"news_box",:locals=>{:pic_name=>"bio_ethan.jpg",:name=>"Ethan Vizitei",:description=>"volunteer musician and the one responsible for making this website exist"}
+  =render :partial=>"news_box",:locals=>{:pic_name=>"bio_tim.jpg",:name=>"Tim Worstell",:description=>"on staff at The Crossing making problems go away and running sound"}
 .right=render(:partial=>"aside_about")
   
