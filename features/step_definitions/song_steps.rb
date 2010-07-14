@@ -3,7 +3,7 @@ Given /^there is a song called "([^"]*)"$/ do |name|
 end
 
 Given /^the song "([^"]*)" should have (\d+) (positive|neutral|negative) vote(?:|s)$/ do |name,count,type|
-  assert_equal count.to_i,Song.find_by_name(name).song_votes.positive.size
+  assert_equal count.to_i,Song.find_by_name(name).song_votes.send(type.to_sym).size
 end
 
 Then /^I should see an mp3 widget for the song "([^"]*)"$/ do |song_name|

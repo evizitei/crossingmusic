@@ -3,7 +3,14 @@
     #title{:data_id=>@song.id}= @song.name
     #mp3_widget= raw(mp3_player @song.recording.url,:autostart =>true)
   .voting_bar
-    /=link_to "No way!"
-    /=link_to "Meh"
+    =button_to "No way!",song_recording_song_votes_path(@song,:song_vote=>{:vote=>"NO",:song_id=>@song.id})
+    =button_to "Meh",song_recording_song_votes_path(@song,:song_vote=>{:vote=>"MEH",:song_id=>@song.id})
     =button_to "Love it!",song_recording_song_votes_path(@song,:song_vote=>{:vote=>"YES",:song_id=>@song.id})
 .right=render :partial=>"playlist"
+
+%style
+  :sass
+    .voting_bar form
+      :width 80px
+      :float left
+      :text-align center

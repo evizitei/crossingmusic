@@ -38,5 +38,25 @@ Feature: Voting on songs for recording at the crossing
     Then I should be on the song voting page for Creator King
       And the song "Come as you are" should have 1 positive vote
     
-    
+  Scenario: Giving a song a negative vote
+    Given I am an unknown user
+      And there is a song called "Come as you are"
+      And there is a song called "Creator King"
+      And I am on the songs page
+      And the song "Come as you are" should have 0 negative votes
+    When I follow "Come as you are"
+      And I press "No way!"
+    Then I should be on the song voting page for Creator King
+      And the song "Come as you are" should have 1 negative vote
+  
+  Scenario: Giving a song a neutral vote
+    Given I am an unknown user
+      And there is a song called "Come as you are"
+      And there is a song called "Creator King"
+      And I am on the songs page
+      And the song "Come as you are" should have 0 neutral votes
+    When I follow "Come as you are"
+      And I press "Meh"
+    Then I should be on the song voting page for Creator King
+      And the song "Come as you are" should have 1 neutral vote
     
