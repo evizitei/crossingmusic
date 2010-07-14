@@ -60,3 +60,10 @@ Feature: Voting on songs for recording at the crossing
     Then I should be on the song voting page for Creator King
       And the song "Come as you are" should have 1 neutral vote
     
+  Scenario: Voting on the last song in the list goes back to index
+    Given I am an unknown user
+      And there is a song called "Come as you are"
+      And I am on the songs page
+    When I follow "Come as you are"
+      And I press "Love it!"
+    Then I should be on the songs page

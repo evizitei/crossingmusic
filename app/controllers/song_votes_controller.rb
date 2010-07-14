@@ -45,7 +45,7 @@ class SongVotesController < ApplicationController
 
     respond_to do |format|
       if @song_vote.save
-        format.html { redirect_to(@song.next) }
+        format.html { redirect_to(@song.next || songs_path) }
         format.xml  { render :xml => @song_vote, :status => :created, :location => @song_vote }
       else
         format.html { render :action => "new" }

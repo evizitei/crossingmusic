@@ -22,4 +22,9 @@ class SongTest < Test::Unit::TestCase
       end
     end
   end
+  
+  should "have next method return nil if there is no next song" do
+    @song = Factory(:song)
+    assert_nil @song.next
+  end
 end
