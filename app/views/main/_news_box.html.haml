@@ -1,6 +1,11 @@
+-email ||= nil
 .news_box_container
   .image=image_tag(pic_name) 
   .text
-    %h2= name
+    %h2
+      -if email
+        =mail_to(email,name)
+      -else
+        =name
     %p= description
   %hr.clear
