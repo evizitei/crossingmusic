@@ -2,7 +2,7 @@ class SongsController < ApplicationController
   # GET /songs
   # GET /songs.xml
   def index
-    @songs = Song.all
+    @songs = Song.active.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class SongsController < ApplicationController
   # GET /songs/1
   # GET /songs/1.xml
   def show
-    @songs = Song.all
+    @songs = Song.active.all
     @song = Song.find(params[:id])
 
     respond_to do |format|

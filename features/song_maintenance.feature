@@ -23,3 +23,14 @@ Feature: managing the current list of songs
       And I press "Save"
     Then I should be on the songs page
       And I should see "Some New Song"
+      
+  Scenario: Deleting a song
+    Given I am logged in as "David"
+      And there is a song called "here I am to worship"
+      And I am on the songs page
+    When I follow "here I am to worship"
+      And I press "Delete Song"
+    Then I should be on the songs page
+      And I should not see "here I am to worship"
+      And there should be an archived song called "here I am to worship"
+   

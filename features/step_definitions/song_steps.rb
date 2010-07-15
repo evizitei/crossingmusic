@@ -10,3 +10,7 @@ Then /^I should see an mp3 widget for the song "([^"]*)"$/ do |song_name|
   Then %Q{I should be on the song voting page for #{song_name}}
   page.should have_css("#mp3_widget")
 end
+
+Then /^there should be an archived song called "([^"]*)"$/ do |song_name|
+  assert_not_nil Song.deleted.find_by_name(song_name)
+end
