@@ -10,7 +10,7 @@
     :javascript
       $(document).ready(function() {
         setTimeout(function(){
-          $('.imageNavigation').slideShow({ interval: 6 });
+          $('.imageNavigation').slideShow({ interval: 6, transition: { mode: 'fade', speed: 2000 } });
         },6000);
       });
     / end javascript for header slideshow 
