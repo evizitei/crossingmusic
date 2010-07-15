@@ -34,7 +34,7 @@ Feature: Voting on songs for recording at the crossing
       And I am on the songs page
       And the song "Come as you are" should have 0 positive votes
     When I follow "Come as you are"
-      And I press "Love it!"
+      And I press "Like It"
     Then I should be on the song voting page for Creator King
       And the song "Come as you are" should have 1 positive vote
     
@@ -45,7 +45,7 @@ Feature: Voting on songs for recording at the crossing
       And I am on the songs page
       And the song "Come as you are" should have 0 negative votes
     When I follow "Come as you are"
-      And I press "No way!"
+      And I press "Not For Me"
     Then I should be on the song voting page for Creator King
       And the song "Come as you are" should have 1 negative vote
   
@@ -56,7 +56,7 @@ Feature: Voting on songs for recording at the crossing
       And I am on the songs page
       And the song "Come as you are" should have 0 neutral votes
     When I follow "Come as you are"
-      And I press "Meh"
+      And I press "Neutral"
     Then I should be on the song voting page for Creator King
       And the song "Come as you are" should have 1 neutral vote
     
@@ -65,5 +65,5 @@ Feature: Voting on songs for recording at the crossing
       And there is a song called "Come as you are"
       And I am on the songs page
     When I follow "Come as you are"
-      And I press "Love it!"
+      And I press "Like It"
     Then I should be on the songs page
