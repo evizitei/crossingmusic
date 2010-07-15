@@ -5,8 +5,15 @@ class Song < ActiveRecord::Base
                     :s3_credentials => "#{Rails.root}/config/amazon_s3.yml",
                     :path => ":attachment/:id/:style/:basename.:extension",
                     :bucket => S3_Bucket
+  
+  scope :deleted,where("songs.deleted_at is not null")
+  scope :active,where("songs.deleted_at is null")
                     
   def next
     Song.where("id > #{self.id}").order("songs.id ASC").limit(1).first
-  end                    
+  end 
+  
+  def destroy
+    update_attributes!(:deleted_at=>DateTime.now)
+  end                   
 end

@@ -23,8 +23,41 @@ class SongTest < Test::Unit::TestCase
     end
   end
   
-  should "have next method return nil if there is no next song" do
-    @song = Factory(:song)
-    assert_nil @song.next
+  context "a song" do
+    setup do
+      @song = Factory(:song)
+    end
+    
+    should "have next method return nil if there is no next song" do
+      assert_nil @song.next
+    end
+    
+    context "when deleted" do
+      setup do
+        Timecop.freeze
+        @song.destroy
+      end
+      
+      should "not be gone from database" do
+        assert_not_nil Song.find(@song.id)
+      end
+      
+      should "have deleted at stamp set" do
+        assert_equal DateTime.now,@song.reload.deleted_at
+      end
+      
+      should "be in scope for finding deleted" do
+        assert_contains(Song.deleted.all,@song)
+      end
+      
+      should "not be in scope for finding undeleted" do
+        assert_does_not_contain(Song.active.all,@song) 
+      end
+      
+      teardown do
+        Timecop.return
+      end
+    end
+
   end
 end

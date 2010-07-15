@@ -12,6 +12,9 @@ Factory.find_definitions
 #authlogic support
 require "authlogic/test_case"
 
+#timecop support
+require 'timecop'
+
 class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
   #
