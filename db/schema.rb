@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100715163959) do
+ActiveRecord::Schema.define(:version => 20100716153945) do
 
   create_table "song_votes", :force => true do |t|
     t.datetime "created_at"
@@ -17,6 +17,8 @@ ActiveRecord::Schema.define(:version => 20100715163959) do
     t.integer  "song_id"
     t.string   "vote"
   end
+
+  add_index "song_votes", ["song_id", "vote"], :name => "song_vote_main_idx"
 
   create_table "songs", :force => true do |t|
     t.string   "name"
@@ -38,5 +40,7 @@ ActiveRecord::Schema.define(:version => 20100715163959) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["email"], :name => "index_users_on_email"
 
 end
