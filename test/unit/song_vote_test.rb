@@ -1,8 +1,9 @@
 require 'test_helper'
 
 class SongVoteTest < Test::Unit::TestCase
-  should_belong_to :song
-  should_validate_presence_of :vote,:song_id
+  should belong_to :song
+  should validate_presence_of :vote
+  should validate_presence_of :song_id
 
   context "vote direction scope" do
     setup do

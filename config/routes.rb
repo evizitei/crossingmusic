@@ -3,7 +3,7 @@ Crossingmusic::Application.routes.draw do |map|
     resources :song_votes, :name_prefix=>"recording"
   end
 
-  resources :users,:user_sessions
+  resources :users,:user_sessions,:all_song_charts
   
 
   match "/", :to => "main#home"

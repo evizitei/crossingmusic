@@ -2,7 +2,7 @@ require 'test_helper'
 
 class SongTest < Test::Unit::TestCase
   should_have_attached_file :recording
-  should_have_many :song_votes
+  should have_many :song_votes
   
   context "song" do
     setup do
@@ -25,7 +25,7 @@ class SongTest < Test::Unit::TestCase
   
   context "a song" do
     setup do
-      @song = Factory(:song)
+      @song = Factory(:song,:name=>"Great Song Name")
     end
     
     should "have next method return nil if there is no next song" do
@@ -58,6 +58,17 @@ class SongTest < Test::Unit::TestCase
         Timecop.return
       end
     end
-
+ 
+    context "with assorted votes" do
+      setup do
+        Factory(:positive_vote,:song=>@song)
+        2.times {Factory(:negative_vote,:song=>@song)}
+        3.times {Factory(:neutral_vote,:song=>@song)}
+      end
+      
+      should "produces valid voting json hash" do
+        assert_equal "{name: 'Great Song Name',data: [1, 3, 2]}",@song.to_chart_json
+      end
+    end
   end
 end

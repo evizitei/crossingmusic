@@ -7,9 +7,9 @@ Feature: Voting on songs for recording at the crossing
     Given I am an unknown user
       And I am on the homepage
     When I follow "Songs"
-    Then I should see "Playlist"
+    Then I should see "VOTE HERE"
     When I follow "Home"
-    Then I should not see "Playlist"
+    Then I should not see "VOTE HERE"
     
   Scenario: Playing a song
     Given I am an unknown user

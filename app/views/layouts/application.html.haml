@@ -56,6 +56,12 @@
                   Login
                   %br
                   %span Team Members
+            -if current_user
+              %li
+                %a{:href=>all_song_charts_path}
+                  Charts
+                  %br
+                  %span Voting Results
       #banner
         .slide_container
           .imageNavigation.slideShow

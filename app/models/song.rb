@@ -15,5 +15,9 @@ class Song < ActiveRecord::Base
   
   def destroy
     update_attributes!(:deleted_at=>DateTime.now)
-  end                   
+  end      
+  
+  def to_chart_json
+    "{name: '#{self.name}',data: [#{song_votes.positive.size}, #{song_votes.neutral.size}, #{song_votes.negative.size}]}"
+  end             
 end
