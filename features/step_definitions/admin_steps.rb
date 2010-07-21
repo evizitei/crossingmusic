@@ -9,3 +9,7 @@ Given /^I am logged in as "([^"]*)"$/ do |name|
   And %Q{I fill in "Password:" with "music_team"}
   And %Q{I press "Login"}
 end
+
+Then /^I should see a bar chart for all songs$/ do
+  page.should have_css("#all_songs_chart")
+end

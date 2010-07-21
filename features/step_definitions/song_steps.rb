@@ -8,6 +8,10 @@ end
 
 Then /^I should see an mp3 widget for the song "([^"]*)"$/ do |song_name|
   Then %Q{I should be on the song voting page for #{song_name}}
+  Then %Q{I should see an mp3 widget}
+end
+
+Then /^I should see an mp3 widget$/ do
   page.should have_css("#mp3_widget")
 end
 

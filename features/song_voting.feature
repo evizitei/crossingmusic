@@ -6,8 +6,10 @@ Feature: Voting on songs for recording at the crossing
   Scenario: navigating to song voting area
     Given I am an unknown user
       And I am on the homepage
+      And there is a song called "Come as you are"
     When I follow "Songs"
     Then I should see "VOTE HERE"
+      And I should see an mp3 widget
     When I follow "Home"
     Then I should not see "VOTE HERE"
     
