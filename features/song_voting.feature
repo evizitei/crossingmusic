@@ -17,6 +17,7 @@ Feature: Voting on songs for recording at the crossing
       And I am on the songs page
     When I follow "Come as you are"
     Then I should see an mp3 widget for the song "Come as you are"
+      And I should see "The Crossing Music Demos"
     
   Scenario: Navigating to another song
     Given I am an unknown user
