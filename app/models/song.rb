@@ -4,7 +4,8 @@ class Song < ActiveRecord::Base
                     :storage => :s3,
                     :s3_credentials => "#{Rails.root}/config/amazon_s3.yml",
                     :path => ":attachment/:id/:style/:basename.:extension",
-                    :s3_alias_url => "mp3.crossingsongs.com"
+                    :s3_host_alias => "mp3.crossingsongs.com",
+                    :url=>':s3_alias_url' 
   
   scope :deleted,where("songs.deleted_at is not null")
   scope :active,where("songs.deleted_at is null")
