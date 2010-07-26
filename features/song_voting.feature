@@ -2,16 +2,6 @@ Feature: Voting on songs for recording at the crossing
   As a congregant
   I want to see a list of songs to vote on, listen to them, and cast my vote
   In order to register my preferences with the music team
-  
-  Scenario: navigating to song voting area
-    Given I am an unknown user
-      And I am on the homepage
-      And there is a song called "Come as you are"
-    When I follow "Songs"
-    Then I should see "VOTE HERE"
-      And I should see an mp3 widget
-    When I follow "Home"
-    Then I should not see "VOTE HERE"
     
   Scenario: Playing a song
     Given I am an unknown user

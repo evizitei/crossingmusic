@@ -1,6 +1,13 @@
+:javascript
+  $(document).ready(function() {
+    $('#twitter_container').twit("crossingmusic");
+  });
 .side_box
   .title About The Crossing Music
   .about_me_thumb
     %img{:src=>"/images/about_thumb.jpg",:alt=>"Me"}
-  .about_me_text Crossing Music,
-    A hand for music and a heart for God.
+  .about_me_text Crossing Music, A hand for music and a heart for God.
+  %hr.clear
+.side_box
+  #twitter_container
+  %hr.clear
