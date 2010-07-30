@@ -1,7 +1,9 @@
 .left
   .song_player
     #title{:data_id=>@song.id}= @song.name
-    #mp3_widget= raw(mp3_player @song.recording.url,:autostart =>true)
+    #mp3_widget
+      /= raw(mp3_player @song.recording.url,:autostart =>true)
+      %embed{:type=>"application/x-shockwave-flash",:wmode=>"transparent",:src=>"http://www.google.com/reader/ui/3523697345-audio-player.swf?audioUrl=#{@song.recording.url}",:height=>"27",:width=>"320"}
   .voting_bar
     =button_to "Not For Me",song_recording_song_votes_path(@song,:song_vote=>{:vote=>"NO",:song_id=>@song.id})
     =button_to "Neutral",song_recording_song_votes_path(@song,:song_vote=>{:vote=>"MEH",:song_id=>@song.id})
