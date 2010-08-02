@@ -12,7 +12,7 @@ class Song < ActiveRecord::Base
   scope :active,where("songs.deleted_at is null")
                     
   def next
-    Song.where("id > #{self.id}").order("songs.id ASC").limit(1).first
+    Song.active.where("id > #{self.id}").order("songs.id ASC").limit(1).first
   end 
   
   def destroy

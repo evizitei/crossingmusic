@@ -20,6 +20,11 @@ class SongTest < Test::Unit::TestCase
       should "pick closest id greater than own id" do
         assert_equal @next_song,@song.next
       end
+      
+      should "pick later song if next one is no longer active" do
+        @next_song.destroy
+        assert_equal @later_song,@song.next
+      end
     end
   end
   
