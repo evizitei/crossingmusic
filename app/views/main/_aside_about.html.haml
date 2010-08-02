@@ -1,13 +1,15 @@
 :javascript
   $(document).ready(function() {
-    $('#twitter_container').twit("crossingmusic");
+    $('#twitter_container').twit("crossingmusic",{limit: 5});
   });
-.side_box
-  .title About The Crossing Music
-  .about_me_thumb
-    %img{:src=>"/images/about_thumb.jpg",:alt=>"Me"}
-  .about_me_text Crossing Music, A hand for music and a heart for God.
-  %hr.clear
 .side_box
   #twitter_container
   %hr.clear
+.side_box
+  #facebook_button{:style=>"margin-left:25px;"}
+    %a{:href=>"http://www.facebook.com/#!/pages/The-Crossing-Music/142471242437866?ref=ts"}=image_tag("facebook.gif")
+.side_box
+  #crossing_link{:style=>"margin-left:15px;"}
+    %a{:href=>"http://www.thecrossingchurch.com"}=image_tag("crossing_link.jpg")
+    %a{:href=>"http://www.thecrossingchurch.com",:style=>"color:#FFFFFF;text-decoration:none;margin-left:15px;"}
+      Visit The Crossing's Website
