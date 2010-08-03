@@ -10,9 +10,10 @@ class Song < ActiveRecord::Base
   
   scope :deleted,where("songs.deleted_at is not null")
   scope :active,where("songs.deleted_at is null")
+  scope :ordered,active.order("placement ASC")
                     
   def next
-    Song.active.where("id > #{self.id}").order("songs.id ASC").limit(1).first
+    Song.ordered.where("placement > #{self.placement}").limit(1).first
   end 
   
   def destroy
@@ -21,5 +22,11 @@ class Song < ActiveRecord::Base
   
   def to_chart_json
     "{name: '#{self.name}',data: [#{song_votes.positive.size}, #{song_votes.neutral.size}, #{song_votes.negative.size}]}"
-  end             
+  end  
+  
+  #class methods
+  def self.update_order!(new_order)
+    transaction { new_order.each_with_index{|id,idx| update(id.to_i, :placement => idx.to_i)} }
+  end      
+  
 end

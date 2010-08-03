@@ -7,14 +7,14 @@ class SongTest < Test::Unit::TestCase
   context "song" do
     setup do
       @rand_song = Factory(:song)
-      @current_top_song = Song.order("songs.id DESC").limit(1).first
-      @song = Factory(:song,:id=>@current_top_song.id + 1)
+      @current_top_song = Song.order("songs.placement DESC").limit(1).first
+      @song = Factory(:song,:placement=>@current_top_song.placement + 1)
     end
     
     context "next method" do
       setup do
-        @next_song = Factory(:song,:id=>@song.id + 1)
-        @later_song = Factory(:song,:id=>@next_song.id + 1)
+        @next_song = Factory(:song,:placement=>@song.placement + 1)
+        @later_song = Factory(:song,:placement=>@next_song.placement + 1)
       end
       
       should "pick closest id greater than own id" do
@@ -25,7 +25,16 @@ class SongTest < Test::Unit::TestCase
         @next_song.destroy
         assert_equal @later_song,@song.next
       end
+      
+      should "sort query by placement" do
+        last_idx = -1
+        Song.ordered.each do |song|
+          assert song.placement >= last_idx
+          last_idx = song.placement
+        end
+      end
     end
+    
   end
   
   context "a song" do
