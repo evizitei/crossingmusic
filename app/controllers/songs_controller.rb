@@ -2,7 +2,7 @@ class SongsController < ApplicationController
   # GET /songs
   # GET /songs.xml
   def index
-    @songs = Song.active.all
+    @songs = Song.ordered.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class SongsController < ApplicationController
   # GET /songs/1
   # GET /songs/1.xml
   def show
-    @songs = Song.active.all
+    @songs = Song.ordered.all
     @song = Song.find(params[:id])
 
     respond_to do |format|
@@ -80,5 +80,14 @@ class SongsController < ApplicationController
       format.html { redirect_to(songs_url) }
       format.xml  { head :ok }
     end
+  end
+  
+  def reorder
+    @songs = Song.ordered.all
+  end
+  
+  def update_order
+    Song.update_order!(params[:order])
+    head :ordered
   end
 end

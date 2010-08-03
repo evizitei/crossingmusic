@@ -5,6 +5,8 @@
       %img{:src=>"/images/icon_eighth_note.gif",:alt=>"twitter",:width=>"26",:height=>"26"}
   -@songs.each do |song|
     .song=link_to song.name,song
-    %hr.clear
+  %hr
+  =link_to "Re-Order Songs",reorder_songs_path
+  %hr.clear
 .side_box
   %p Click on each song above to listen and vote!  Once you've rated a song, you'll automatically be taken to the next recording in the list. We’ll take the results and go to a real studio to record your favorite five or six tracks.

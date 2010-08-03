@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100716153945) do
+ActiveRecord::Schema.define(:version => 20100803152544) do
 
   create_table "song_votes", :force => true do |t|
     t.datetime "created_at"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20100716153945) do
     t.integer  "recording_file_size"
     t.datetime "recording_updated_at"
     t.datetime "deleted_at"
+    t.integer  "placement"
   end
 
   create_table "users", :force => true do |t|

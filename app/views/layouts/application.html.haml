@@ -4,9 +4,9 @@
   %head
     %meta{"http-equiv"=>"Content-Type",:content=>"text/html",:charset=>"utf-8"}
     %title Crossing Music
-    =stylesheet_link_tag "styles","jquery.lightbox-0.5"
+    =stylesheet_link_tag "styles","jquery.lightbox-0.5","jquery-ui"
     / start javascript for header slideshow
-    = javascript_include_tag "jquery","rails","jquery.slideshow","jquery.twit"
+    = javascript_include_tag "jquery","rails","jquery.slideshow","jquery.twit","jquery-ui"
     :javascript
       $(document).ready(function() {
         var banner_images = ["piano_hands.jpg","board_and_band.jpg","panoramic_2.jpg","sheet_music.jpg"];
@@ -44,7 +44,7 @@
                 %br
                 %span where it begins
             %li
-              %a{:href=>url_for(Song.active.first)}
+              %a{:href=>url_for(Song.ordered.first)}
                 Songs 
                 %br
                 %span cast your vote

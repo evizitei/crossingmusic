@@ -7,22 +7,26 @@ $background_brown: #44321a;
 $lighter_background: #4D391E;
 $text_orange: #FF6927;
 $title_color: #FFFFFF;
+$text_normal: #FFEACC;
 
 /*Template Layout*/
 body {
 	background-color: $background_brown;
 	margin:0px;
 	padding:0px;
-	color:#ffeacc;
+	color:$text_normal;
 	font-family:"Trebuchet MS", Arial;
 	font-size:13px;
 	line-height:1.5em; /* vertical spacing between your lines of text*/
+}
+img{
+ border:none; 
 }
 a, a:link, a:visited {
 	color:#ff6826;
 }
 a:hover {
-	color:#ffeacc;
+	color:$text_normal;
 	text-decoration:none;
 }
 #wrapper {
@@ -56,7 +60,7 @@ a:hover {
 	font-family:"Trebuchet MS", Arial;
 }
 #menucontainer ul {
-	color:#ffffff;
+	color:$title_color;
 	padding:0px;
 	margin:0px;
 }
@@ -424,7 +428,7 @@ ul.tags li a:hover {
 }
 .table td {
 	padding:3px 8px;
-	color:#ffeacc;
+	color:$text_normal;
 	font-size:12px;
 	height:28px;
 }
@@ -524,7 +528,7 @@ ul.ticklist li {
 	color:$background_brown;
 }
 .contact_title {
-	color:#ffeacc;
+	color:$text_normal;
 	font-weight:bold;
 	float:left;
 	width:70px;
@@ -550,7 +554,7 @@ ul.ticklist li {
 	width:80px;
 	margin-right:15px;
 	clear:left;
-	color:#ffeacc;
+	color:$text_normal;
 	font-weight:bold;
 	text-align:right;
 	height:32px;
@@ -613,4 +617,26 @@ $twit_padding: 7px;
   margin-top: 0;
   padding: 5px;
   background-color: $lighter_background;
+}
+
+/** SONG LIST SORTING **/
+
+#sortable {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 60;
+  
+  li {
+    margin: 0 3px 3px 3px;
+	  padding: 0.4em;
+	  padding-left: 1.5em;
+	  font-size: 1.4em;
+	  height: 18px;
+	  
+	  span{
+	    position: absolute;
+	    margin-left: -1.3em;
+	  }
+  }
 }

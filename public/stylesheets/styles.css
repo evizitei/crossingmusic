@@ -12,6 +12,9 @@ body {
   line-height: 1.5em;
   /* vertical spacing between your lines of text*/ }
 
+img {
+  border: none; }
+
 a, a:link, a:visited {
   color: #ff6826; }
 
@@ -53,7 +56,7 @@ a:hover {
   font-family: "Trebuchet MS", Arial; }
 
 #menucontainer ul {
-  color: #ffffff;
+  color: white;
   padding: 0px;
   margin: 0px; }
 
@@ -606,3 +609,19 @@ ul.ticklist li {
   margin-top: 0;
   padding: 5px;
   background-color: #4d391e; }
+
+/** SONG LIST SORTING **/
+#sortable {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 60; }
+  #sortable li {
+    margin: 0 3px 3px 3px;
+    padding: 0.4em;
+    padding-left: 1.5em;
+    font-size: 1.4em;
+    height: 18px; }
+    #sortable li span {
+      position: absolute;
+      margin-left: -1.3em; }

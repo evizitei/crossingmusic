@@ -1,0 +1,15 @@
+:javascript
+  $(function() {
+    $("#sortable").sortable({
+      update: function(event, ui) {
+        var result = $("#sortable").sortable("toArray");
+        $.post('/songs/update_order',{order: result});
+      }
+    });
+  	$("#sortable").disableSelection();
+  });
+%ul#sortable
+  -@songs.each do |song|
+    %li.ui-state-default{:id=>song.id}
+      %span.ui-icon.ui-icon-arrowthick-2-n-s
+      = song.name
