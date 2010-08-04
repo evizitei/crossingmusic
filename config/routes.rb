@@ -1,10 +1,13 @@
 Crossingmusic::Application.routes.draw do |map|
   resources :songs do 
+    
     resources :song_votes, :name_prefix=>"recording"
+    
     collection do
       get :reorder
       post :update_order
     end
+    
   end
 
   resources :users,:user_sessions,:all_song_charts
@@ -14,6 +17,7 @@ Crossingmusic::Application.routes.draw do |map|
   match "/about", :to => "main#about"
   match "login" => "user_sessions#new",:as=>:login
   match "logout" => "user_sessions#destroy",:as=>:logout
+  match "/song_votes/reset" => "song_votes#reset",:as=>:reset_votes
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

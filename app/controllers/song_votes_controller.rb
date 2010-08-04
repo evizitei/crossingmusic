@@ -81,4 +81,11 @@ class SongVotesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def reset
+    SongVote.find_each do |sv|
+      sv.destroy
+    end
+    redirect_to all_song_charts_path
+  end
 end
