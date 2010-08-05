@@ -1,4 +1,7 @@
 class SongVotesController < ApplicationController
+  before_filter do
+    @tab = "SONGS"
+  end
   # GET /song_votes
   # GET /song_votes.xml
   def index

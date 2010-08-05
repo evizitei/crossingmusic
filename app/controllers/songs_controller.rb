@@ -1,4 +1,7 @@
 class SongsController < ApplicationController
+  before_filter do
+    @tab = "SONGS"
+  end
   # GET /songs
   # GET /songs.xml
   def index

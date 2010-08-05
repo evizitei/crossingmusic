@@ -39,17 +39,17 @@
           / a class of ".current" on the a tag will highlight it as being current context
           %ul
             %li
-              %a{:href=>"/"}
+              %a{:href=>"/",:class=>(@tab == "HOME" ? "current" : "")}
                 Home 
                 %br
                 %span
             %li
-              %a{:href=>url_for(Song.ordered.first)}
+              %a{:href=>url_for(Song.ordered.first),:class=>(@tab == "SONGS" ? "current" : "")}
                 Songs 
                 %br
                 %span cast your vote
             %li
-              %a{:href=>"/about"}
+              %a{:href=>"/about",:class=>(@tab == "ABOUT" ? "current" : "")}
                 About 
                 %br
                 %span
@@ -66,7 +66,7 @@
                   %span
             -if current_user
               %li
-                %a{:href=>all_song_charts_path}
+                %a{:href=>all_song_charts_path,:class=>(@tab == "CHARTS" ? "current" : "")}
                   Charts
                   %br
                   %span Voting Results
