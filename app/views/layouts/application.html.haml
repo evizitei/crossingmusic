@@ -42,7 +42,7 @@
               %a{:href=>"/"}
                 Home 
                 %br
-                %span where it begins
+                %span
             %li
               %a{:href=>url_for(Song.ordered.first)}
                 Songs 
@@ -52,7 +52,7 @@
               %a{:href=>"/about"}
                 About 
                 %br
-                %span who we are
+                %span
             %li
               -if current_user
                 %a{:href=>logout_path}
@@ -63,7 +63,7 @@
                 %a{:href=>login_path}
                   Login
                   %br
-                  %span Team Members
+                  %span
             -if current_user
               %li
                 %a{:href=>all_song_charts_path}
