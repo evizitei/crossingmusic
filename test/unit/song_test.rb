@@ -72,17 +72,5 @@ class SongTest < Test::Unit::TestCase
         Timecop.return
       end
     end
- 
-    context "with assorted votes" do
-      setup do
-        Factory(:positive_vote,:song=>@song)
-        2.times {Factory(:negative_vote,:song=>@song)}
-        3.times {Factory(:neutral_vote,:song=>@song)}
-      end
-      
-      should "produces valid voting json hash" do
-        assert_equal "{name: 'Great Song Name',data: [1, 3, 2]}",@song.to_chart_json
-      end
-    end
   end
 end

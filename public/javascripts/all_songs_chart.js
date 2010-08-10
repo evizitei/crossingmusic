@@ -130,7 +130,7 @@ $(document).ready(function() {
             text: 'Voting Results'
          },
          xAxis: {
-            categories: ['Positive', 'Neutral', 'Negative']
+            categories: eval($("#song_names").html())
          },
          yAxis: {
             title: {

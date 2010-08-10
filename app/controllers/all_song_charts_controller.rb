@@ -1,6 +1,7 @@
 class AllSongChartsController < ApplicationController
   def index
     @tab = "CHARTS"
-    @chart_data = "[#{Song.ordered.all.map{|s| s.to_chart_json}.join(",")}]"
+    @song_names = "[#{Song.ordered.all.map{|s| s.name} * ","}]"
+    @chart_data = SongVote.chart_data
   end
 end
