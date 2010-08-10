@@ -4,7 +4,6 @@ gem 'rails', '3.0.0.beta4'
 gem 'haml'
 gem 'paperclip'
 gem "aws-s3"
-gem "authlogic", :path => 'vendor/git/authlogic'
 
 gem 'pg', :group => :production
 
