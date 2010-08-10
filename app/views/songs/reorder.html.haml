@@ -8,8 +8,9 @@
     });
   	$("#sortable").disableSelection();
   });
-%ul#sortable
-  -@songs.each do |song|
-    %li.ui-state-default{:id=>song.id}
-      %span.ui-icon.ui-icon-arrowthick-2-n-s
-      = song.name
+-if current_user
+  %ul#sortable
+    -@songs.each do |song|
+      %li.ui-state-default{:id=>song.id}
+        %span.ui-icon.ui-icon-arrowthick-2-n-s
+        = song.name
