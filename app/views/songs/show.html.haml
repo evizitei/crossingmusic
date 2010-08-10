@@ -8,13 +8,13 @@
     =button_to "Neutral",song_recording_song_votes_path(@song,:song_vote=>{:vote=>"MEH",:song_id=>@song.id})
     =button_to "Like It",song_recording_song_votes_path(@song,:song_vote=>{:vote=>"YES",:song_id=>@song.id})
   #song_maintenance
-    -if current_user
+    -if false#current_user
       =button_to "Delete Song",song_path(@song),:method => :delete
   %br
   %br
   #instructions
     %h1 The Crossing Music Demos
-    -if current_user
+    -if false#current_user
       =button_to "Add a Song",new_song_path
     %p 
       %strong Help us choose which songs we should record for our first EP (short album)!

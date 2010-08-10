@@ -8,7 +8,7 @@
     });
   	$("#sortable").disableSelection();
   });
--if current_user
+-if false#current_user
   %ul#sortable
     -@songs.each do |song|
       %li.ui-state-default{:id=>song.id}
