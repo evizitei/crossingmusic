@@ -1,3 +1,5 @@
+require 'paperclip'
+
 class Song < ActiveRecord::Base
   has_many :song_votes
   has_attached_file :recording,

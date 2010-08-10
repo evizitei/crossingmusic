@@ -1,9 +1,3 @@
-PATH
-  remote: vendor/git/authlogic
-  specs:
-    authlogic (2.1.3)
-      activesupport
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -143,7 +137,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  authlogic!
   aws-s3
   capybara
   cucumber
