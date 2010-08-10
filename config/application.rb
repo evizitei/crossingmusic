@@ -4,7 +4,11 @@ require 'rails/all'
 
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
+require 'bundler'
 Bundler.require(:default, Rails.env) if defined?(Bundler)
+require 'paperclip'
+require 'paperclip/railtie'
+Paperclip::Railtie.insert
 
 module Crossingmusic
   class Application < Rails::Application
