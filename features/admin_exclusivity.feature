@@ -27,7 +27,6 @@ Feature:  The administrative area should require a login
       And I should not see "Add a Song"
     When I am logged in as "David"
       And I am on the songs page
-      And show me the page
     Then I press "Add a Song"
     
   Scenario: Should only be able to see the Charts tab if you are logged in
