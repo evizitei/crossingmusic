@@ -7,6 +7,7 @@ gem "aws-s3"
 
 gem 'pg', :group => :production
 
+gem 'authlogic'
 gem 'sqlite3-ruby', :require => 'sqlite3', :group=>:development
 gem 'capybara', :group=>:development
 gem 'database_cleaner', :group=>:development

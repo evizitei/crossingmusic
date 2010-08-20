@@ -53,19 +53,18 @@
                 About 
                 %br
                 %span
-            -if false
-              %li
-                -if false #current_user
-                  %a{:href=>logout_path}
-                    Logout
-                    %br
-                    %span= current_user.name
-                -else
-                  %a{:href=>login_path}
-                    Login
-                    %br
-                    %span
-            -if false #current_user
+            %li
+              -if current_user
+                %a{:href=>logout_path}
+                  Logout
+                  %br
+                  %span= current_user.name
+              -else
+                %a{:href=>login_path}
+                  Login
+                  %br
+                  %span
+            -if current_user
               %li
                 %a{:href=>all_song_charts_path,:class=>(@tab == "CHARTS" ? "current" : "")}
                   Charts

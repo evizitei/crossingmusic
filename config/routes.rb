@@ -12,7 +12,7 @@ Crossingmusic::Application.routes.draw do |map|
 
   resources :users,:all_song_charts
   
-  #resources :user_sessions
+  resources :user_sessions
 
   match "/", :to => "main#home"
   match "/about", :to => "main#about"

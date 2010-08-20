@@ -1,7 +1,7 @@
 .left 
   %div{:style=>"clear:both"}
     %h1 Login Here
-    =form_for @user_session do |f|
+    =form_for @user_session, :url => { :action => "create" } do |f|
       %fieldset.user_session
         =f.label :email,"Email:"
         =f.text_field :email
