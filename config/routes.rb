@@ -10,12 +10,13 @@ Crossingmusic::Application.routes.draw do |map|
     
   end
 
-  resources :users,:all_song_charts
+  resources :users,:all_song_charts,:contact_messages
   
   resources :user_sessions
 
   match "/", :to => "main#home"
   match "/about", :to => "main#about"
+  match "/contact", :to => "main#contact"
   match "login" => "user_sessions#new",:as=>:login
   match "logout" => "user_sessions#destroy",:as=>:logout
   match "/song_votes/reset" => "song_votes#reset",:as=>:reset_votes

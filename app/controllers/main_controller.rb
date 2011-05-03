@@ -6,4 +6,8 @@ class MainController < ApplicationController
   def about
     @tab = "ABOUT"
   end
+  
+  def contact
+    @tab = "CONTACT"
+  end
 end
