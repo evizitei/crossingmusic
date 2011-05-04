@@ -16,7 +16,7 @@ Crossingmusic::Application.routes.draw do |map|
 
   match "/", :to => "main#home"
   match "/about", :to => "main#about"
-  match "/contact", :to => "main#contact"
+  match "/contact", :to => "main#contact",:as=>:contact_us
   match "login" => "user_sessions#new",:as=>:login
   match "logout" => "user_sessions#destroy",:as=>:logout
   match "/song_votes/reset" => "song_votes#reset",:as=>:reset_votes
