@@ -1,0 +1,18 @@
+.left
+  %h1 The Crossing Music Albums
+  =render "display",:album=>@albums.delete_at(0)
+  %h3 Discography
+  %ul#albums
+    -@albums.each do |album|
+      %li.album
+        =link_to album.name,album
+        -if current_user
+          \--    
+          =link_to "edit",edit_album_path(album)
+        \--
+        =link_to "buy",album.band_camp_url
+  -if current_user
+    =button_to "Add an Album",new_album_path
+  %p Listen to and buy the latest projects from The Crossing Music
+  
+.right

@@ -1,0 +1,11 @@
+#album_display
+  #album_header
+    %h2= album.name
+    =link_to "Buy this album",album.band_camp_url
+  #album_cover
+    %img{:src=>album.cover.url}
+  #album_songs
+    %h3 Track List
+    %ul#song_list
+    - album.songs.each_with_index do |song,idx|
+      %li.song= "#{idx}) #{song.name}"

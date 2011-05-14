@@ -1,0 +1,13 @@
+= form_for(album) do |f|
+  =render "shared/error_messages",:target=>album
+  .field
+    = f.label :name 
+    = f.text_field :name 
+  .field
+    = f.label :cover
+    = f.file_field :cover
+  .field
+    = f.label :band_camp_url
+    = f.text_field :band_camp_url
+  .actions
+    = f.submit 

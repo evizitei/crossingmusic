@@ -1,4 +1,5 @@
 Crossingmusic::Application.routes.draw do |map|
+  resources :albums 
   resources :songs do 
     
     resources :song_votes, :name_prefix=>"recording"

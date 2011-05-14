@@ -20,6 +20,10 @@
         setTimeout(function(){
           $('.imageNavigation').slideShow({ interval: 6, transition: { mode: 'fade', speed: 2000 } });
         },6000);
+        
+        $(".slide_container").click(function(){
+          window.location = "/albums";
+        });
       });
     / end javascript for header slideshow 
     /start lightbox code
@@ -44,7 +48,7 @@
                 %br
                 %span
             %li
-              %a{:href=>url_for(Song.ordered.first),:class=>(@tab == "SONGS" ? "current" : "")}
+              %a{:href=>albums_path,:class=>(@tab == "SONGS" ? "current" : "")}
                 Songs 
                 %br
                 %span cast your vote
@@ -69,12 +73,12 @@
                   Login
                   %br
                   %span
-            -if current_user
-              %li
-                %a{:href=>all_song_charts_path,:class=>(@tab == "CHARTS" ? "current" : "")}
-                  Charts
-                  %br
-                  %span Voting Results
+            / -if current_user
+            /   %li
+            /     %a{:href=>all_song_charts_path,:class=>(@tab == "CHARTS" ? "current" : "")}
+            /       Charts
+            /       %br
+            /       %span Voting Results
       #banner
         .slide_container
           .imageNavigation.slideShow

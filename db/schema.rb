@@ -10,7 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110503174013) do
+ActiveRecord::Schema.define(:version => 20110514170125) do
+
+  create_table "albums", :force => true do |t|
+    t.string   "name"
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "band_camp_url"
+  end
 
   create_table "contact_messages", :force => true do |t|
     t.string   "subject"
@@ -38,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20110503174013) do
     t.datetime "recording_updated_at"
     t.datetime "deleted_at"
     t.integer  "placement"
+    t.integer  "album_id"
   end
 
   create_table "users", :force => true do |t|
