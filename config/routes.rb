@@ -1,15 +1,18 @@
 Crossingmusic::Application.routes.draw do |map|
-  resources :albums 
-  resources :songs do 
-    
-    resources :song_votes, :name_prefix=>"recording"
-    
-    collection do
-      get :reorder
-      post :update_order
-    end
-    
+  resources :albums do
+    resources :songs
   end
+  
+  # resources :songs do 
+  #   
+  #   resources :song_votes, :name_prefix=>"recording"
+  #   
+  #   collection do
+  #     get :reorder
+  #     post :update_order
+  #   end
+  #   
+  # end
 
   resources :users,:all_song_charts,:contact_messages
   

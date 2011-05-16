@@ -2,58 +2,30 @@ class SongsController < ApplicationController
   before_filter do
     @tab = "SONGS"
   end
-  # GET /songs
-  # GET /songs.xml
+
   def index
-    @songs = Song.ordered.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @songs }
-    end
+    @album = Album.find(params[:album_id])
+    @songs = @album.songs
   end
 
-  # GET /songs/1
-  # GET /songs/1.xml
-  def show
-    @songs = Song.ordered.all
-    @song = Song.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @song }
-    end
-  end
-
-  # GET /songs/new
-  # GET /songs/new.xml
   def new
+    @album = Album.find(params[:album_id])
     @song = Song.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @song }
-    end
   end
 
-  # GET /songs/1/edit
   def edit
+    @album = Album.find(params[:album_id])
     @song = Song.find(params[:id])
   end
 
-  # POST /songs
-  # POST /songs.xml
   def create
-    @song = Song.new(params[:song])
+    @album = Album.find(params[:album_id])
+    @song = Song.new(params[:song].merge({:album_id=>@album.id}))
 
-    respond_to do |format|
-      if @song.save
-        format.html { redirect_to songs_path }
-        format.xml  { render :xml => @song, :status => :created, :location => @song }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @song.errors, :status => :unprocessable_entity }
-      end
+    if @song.save
+      redirect_to album_songs_path(@album)
+    else
+      render :action => "new"
     end
   end
 
@@ -73,16 +45,12 @@ class SongsController < ApplicationController
     end
   end
 
-  # DELETE /songs/1
-  # DELETE /songs/1.xml
   def destroy
+    @album = Album.find(params[:album_id])
     @song = Song.find(params[:id])
     @song.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(songs_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to album_songs_path(@album)
   end
   
   def reorder

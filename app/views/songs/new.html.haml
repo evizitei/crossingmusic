@@ -1,6 +1,6 @@
 .left
-  %h1 New Song
-  =form_for @song, :html=>{:multipart => true} do |f|
+  %h1= "New Song for '#{@album.name}'"
+  =form_for [@album,@song], :html=>{:multipart => true} do |f|
     %fieldset.song
       =f.label :name,"Name:"
       =f.text_field :name

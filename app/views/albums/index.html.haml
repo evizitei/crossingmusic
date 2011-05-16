@@ -9,6 +9,8 @@
         -if current_user
           \--    
           =link_to "edit",edit_album_path(album)
+          \--
+          =link_to "manage songs",album_songs_path(album)
         \--
         =link_to "buy",album.band_camp_url
   -if current_user

@@ -9,18 +9,6 @@
     = javascript_include_tag "jquery","rails","jquery.slideshow","jquery.twit","jquery-ui"
     :javascript
       $(document).ready(function() {
-        var banner_images = ["piano_hands.jpg","board_and_band.jpg","panoramic_2.jpg","sheet_music.jpg"];
-        $.each(banner_images,function(index,image){
-          var img = new Image(889,297);
-          var src = "/images/" + image
-          img.src = src;
-          $("ul.slides").append("<li class='slide' style='position:absolute; display:none;'><img src='" + src + "'/></li>");
-        });
-        
-        setTimeout(function(){
-          $('.imageNavigation').slideShow({ interval: 6, transition: { mode: 'fade', speed: 2000 } });
-        },6000);
-        
         $(".slide_container").click(function(){
           window.location = "/albums";
         });
@@ -84,7 +72,7 @@
           .imageNavigation.slideShow
             %ul.slides{:style=>"height:297px;"}
               %li.slide{:style=>"position:absolute;"}
-                %img{:src=>"/images/cross_window.jpg",:alt=>"slide1"}
+                %img{:src=>"/images/CROSSING_slide.jpg",:alt=>"slide1"}
         .menu
           .icon
             %img{:src=>"/images/icon_camera.gif",:alt=>"Camera",:width=>"30",:height=>"26"}
