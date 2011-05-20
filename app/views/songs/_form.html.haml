@@ -1,0 +1,8 @@
+=form_for [album,song], :html=>{:multipart => true} do |f|
+  %fieldset.song
+    =f.label :name,"Name:"
+    =f.text_field :name
+    %br
+    =f.label :recording,"recording"
+    =f.file_field :recording
+  =f.submit "Save"

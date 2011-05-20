@@ -5,7 +5,7 @@ class SongsController < ApplicationController
 
   def index
     @album = Album.find(params[:album_id])
-    @songs = @album.songs
+    @songs = @album.songs.active
   end
 
   def new
@@ -29,19 +29,13 @@ class SongsController < ApplicationController
     end
   end
 
-  # PUT /songs/1
-  # PUT /songs/1.xml
   def update
+    @album = Album.find(params[:album_id])
     @song = Song.find(params[:id])
-
-    respond_to do |format|
-      if @song.update_attributes(params[:song])
-        format.html { redirect_to(@song, :notice => 'Song was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @song.errors, :status => :unprocessable_entity }
-      end
+    if @song.update_attributes(params[:song])
+      redirect_to album_songs_path(@album)
+    else  
+      render :action => "edit"
     end
   end
 

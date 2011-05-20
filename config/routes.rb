@@ -1,4 +1,5 @@
 Crossingmusic::Application.routes.draw do |map|
+  match "/album/:album_id/delete_song/:id" => "songs#destroy",:as=>:delete_song
   resources :albums do
     resources :songs
   end

@@ -5,5 +5,5 @@
       %li.song
         = "#{idx + 1}) #{song.name}"
         =link_to "Edit",edit_album_song_path(@album,song)
-        =link_to "Remove",album_song_path(@album,song),:method=>:delete
+        =link_to "Remove",delete_song_path(:album_id=>@album.id,:id=>song.id)
   =link_to "Add a Song",new_album_song_path(@album)

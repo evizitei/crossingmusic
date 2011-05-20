@@ -33,4 +33,8 @@ class AlbumsController < ApplicationController
       render :action => "edit" 
     end
   end
+  
+  def show
+    @album = Album.find(params[:id])
+  end
 end

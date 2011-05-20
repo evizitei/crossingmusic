@@ -10,7 +10,7 @@
     :javascript
       $(document).ready(function() {
         $(".slide_container").click(function(){
-          window.location = "/albums";
+          window.location = "http://thecrossingmusic.bandcamp.com";
         });
       });
     / end javascript for header slideshow 
@@ -26,7 +26,7 @@
     #wrapper
       #header
         #logo
-          %img{:src=>"/images/crossing_logo.gif",:alt=>"Logo"}
+          %img{:src=>"/images/crossingrecord_logo.png",:alt=>"Logo"}
         #menucontainer
           / a class of ".current" on the a tag will highlight it as being current context
           %ul
@@ -73,12 +73,6 @@
             %ul.slides{:style=>"height:297px;"}
               %li.slide{:style=>"position:absolute;"}
                 %img{:src=>"/images/CROSSING_slide.jpg",:alt=>"slide1"}
-        .menu
-          .icon
-            %img{:src=>"/images/icon_camera.gif",:alt=>"Camera",:width=>"30",:height=>"26"}
-          %ul.submenu
-            / %li
-            /  %a{:href=>"#"} latest photos
       #maincontent
         =yield
       %hr.clear
