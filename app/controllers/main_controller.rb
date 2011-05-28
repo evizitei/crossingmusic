@@ -1,6 +1,8 @@
 class MainController < ApplicationController
-  before_filter do
+  
+  def home
     @tab = "HOME"
+    @home_presenter = HomePresenter.new
   end
   
   def about

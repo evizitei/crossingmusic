@@ -21,3 +21,4 @@ gem 'launchy', :group=>:development
 gem 'factory_girl_rails', :group=>:development
 gem 'fakeweb', :group=>:development
 gem 'timecop', :group=>:development
+gem 'feedzirra'
