@@ -1,5 +1,5 @@
 .left
   %h3= "Editing #{@album.name}"
   =render("form",:album=>@album)
-  =link_to "Manage Songs",albumn_songs_path(@album)
+  =link_to "Manage Songs",album_songs_path(@album)
 .right
