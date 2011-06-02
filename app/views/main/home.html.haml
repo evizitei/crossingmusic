@@ -4,5 +4,7 @@
   =raw(@home_presenter.news_feed)
   %br
   %br
-  #logo_holder{:style=>"padding-left:150px;"}=image_tag("biglogo.jpg")
+  %audio#audioplayer{:autoplay=>"true",:loop=>"true",:controls=>"true",:style=>"width:424px;"}
+    %source{:src=>"http://mp3.crossingsongs.com.s3.amazonaws.com/fixed/home_sample.mp3"}
+  //%embed{:src=>"http://mp3.crossingsongs.com.s3.amazonaws.com/fixed/home_sample.mp3",:loop=>'true',:autoplay=>'true',:width=>'145',:height=>'15'}
 .right=render(:partial=>"aside_about")
