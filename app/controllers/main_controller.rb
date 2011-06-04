@@ -1,8 +1,9 @@
 class MainController < ApplicationController
   
   def home
-    @tab = "HOME"
-    @home_presenter = HomePresenter.new
+    redirect_to albums_path
+    #@tab = "HOME"
+    #@home_presenter = HomePresenter.new
   end
   
   def about
