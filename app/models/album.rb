@@ -1,10 +1,9 @@
 class Album < ActiveRecord::Base
   has_many :songs
-  has_attached_file :cover,
+
+  has_attached_file :cover, 
                     :storage => :s3,
-                    :s3_credentials => "#{Rails.root}/config/amazon_s3.yml",
-                    :path => ":attachment/:id/:style/:basename.:extension",
-                    :s3_host_alias => "mp3.crossingsongs.com",
-                    :url=>":s3_alias_url",
-                    :bucket=>"mp3.crossingsongs.com"
+                    :s3_credentials => "#{Rails.root.to_s}/config/s3.yml",
+                    :s3_permissions => :public_read,
+                    :path => ":attachment/:style/:id.:extension"
 end
