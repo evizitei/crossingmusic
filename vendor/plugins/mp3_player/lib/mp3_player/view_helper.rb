@@ -102,7 +102,7 @@ module Mp3Player
     
     def google_mp3_player(mp3)
       %Q{
-        <embed type="application/x-shockwave-flash" wmode="transparent" src="http://www.google.com/reader/ui/3523697345-audio-player.swf?audioUrl=#{mp3}" height="27" width="320"></embed>
+        <embed type="application/x-shockwave-flash" wmode="transparent" src="http://www.google.com/reader/ui/3523697345-audio-player.swf?audioUrl=#{mp3}&autoPlay=true" height="27" width="320"></embed>
       }
     end
 
