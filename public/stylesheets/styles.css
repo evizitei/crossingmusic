@@ -538,7 +538,7 @@ ul.ticklist li {
   border: 1px solid #e8ded0 !important;
   margin: 3px 0px;
   padding: 4px;
-  color: #ffffff !important; }
+  color: white !important; }
 
 #contact {
   border: 0;
@@ -625,3 +625,28 @@ ul.ticklist li {
     #sortable li span {
       position: absolute;
       margin-left: -1.3em; }
+
+#album_display {
+  width: 100%;
+  border-top: 2px solid #e8ded0;
+  border-bottom: 2px solid #e8ded0;
+  padding-top: 7px;
+  padding-bottom: 7px; }
+  #album_display #album_left {
+    float: left;
+    border-right: 1px dashed #e8ded0;
+    padding-right: 40px; }
+  #album_display #album_songs {
+    float: right;
+    text-align: left;
+    width: 400px;
+    padding-left: 10px; }
+  #album_display #album_clear {
+    clear: both; }
+
+#discography {
+  clear: both;
+  margin-top: 10px; }
+
+.full {
+  width: 100%; }

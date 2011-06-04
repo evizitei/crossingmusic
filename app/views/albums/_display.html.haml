@@ -1,13 +1,14 @@
 #album_display
-  #album_header
-    %h2= album.name
-    =link_to album.band_camp_url do
-      =image_tag "buy_now.jpeg"
-    -if current_user
-      =link_to "Edit",edit_album_path(album)
-      =link_to "Manage Songs",album_songs_path(album)
-  #album_cover
-    %img{:src=>album.cover.url}
+  #album_left
+    #album_header
+      %h2= album.name
+      =link_to album.band_camp_url do
+        =image_tag "buy_now.jpeg"
+      -if current_user
+        =link_to "Edit",edit_album_path(album)
+        =link_to "Manage Songs",album_songs_path(album)
+    #album_cover
+      %img{:src=>album.cover.url}
   #album_songs
     %h3 Track List
     %ul#song_list
@@ -15,3 +16,7 @@
       %li.song
         = "#{idx + 1}) #{song.name}"
         =link_to "Listen",album_song_path(album,song)
+    %br
+    =link_to album.band_camp_url do
+      =image_tag "buy_now.jpeg"
+  #album_clear
