@@ -55,4 +55,9 @@ class SongsController < ApplicationController
     Song.update_order!(params[:order])
     head :ordered
   end
+  
+  def show
+    @album = Album.find(params[:album_id])
+    @song = Song.find(params[:id])
+  end
 end
