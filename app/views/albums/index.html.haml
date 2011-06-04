@@ -16,6 +16,6 @@
   -if current_user
     =button_to "Add an Album",new_album_path
   %p Listen to and buy the latest projects from The Crossing Music
-  %audio#audioplayer{:autoplay=>"true",:loop=>"true",:controls=>"true",:style=>"width:424px;"}
-    %source{:src=>"http://mp3.crossingsongs.com.s3.amazonaws.com/fixed/home_sample.mp3"}
+  #mp3_widget
+    = raw(google_mp3_player "http://mp3.crossingsongs.com.s3.amazonaws.com/fixed/home_sample.mp3")
 .right
