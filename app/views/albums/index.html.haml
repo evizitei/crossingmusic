@@ -15,12 +15,9 @@
             =link_to "edit",edit_album_path(album)
             \--
             =link_to "manage songs",album_songs_path(album)
-          \--
-          =link_to album.band_camp_url do
-            =image_tag "buy_now.jpeg"
-  -if current_user
-    =button_to "Add an Album",new_album_path
-  %p Listen to and buy the latest projects from The Crossing Music
-  #mp3_widget
-    = raw(google_mp3_player "http://mp3.crossingsongs.com.s3.amazonaws.com/fixed/Forever_Home_Streaming_Sample.mp3")
-.right
+  #disc_footer
+    -if current_user
+      =button_to "Add an Album",new_album_path
+    %p Listen to and buy the latest projects from The Crossing Music
+    #mp3_widget
+      = raw(google_mp3_player "http://mp3.crossingsongs.com.s3.amazonaws.com/fixed/Forever_Home_Streaming_Sample.mp3")

@@ -649,6 +649,12 @@ ul.ticklist li {
   margin-top: 10px; }
   #discography #albums {
     list-style: none; }
+    #discography #albums .album {
+      float: left;
+      margin-left: 7px; }
+
+#disc_footer {
+  clear: both; }
 
 .full {
   width: 100%; }

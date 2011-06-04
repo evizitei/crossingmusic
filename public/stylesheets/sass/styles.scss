@@ -671,7 +671,15 @@ $twit_padding: 7px;
   margin-top:10px;
   #albums{
     list-style: none;
+    .album{
+      float:left;
+      margin-left:7px;
+    }
   }
+}
+
+#disc_footer{
+  clear:both;
 }
 
 .full{
