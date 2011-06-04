@@ -12,7 +12,8 @@
           \--
           =link_to "manage songs",album_songs_path(album)
         \--
-        =link_to "buy",album.band_camp_url
+        =link_to album.band_camp_url do
+          =image_tag "buy_now.jpeg"
   -if current_user
     =button_to "Add an Album",new_album_path
   %p Listen to and buy the latest projects from The Crossing Music
