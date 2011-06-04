@@ -226,6 +226,10 @@ ul.submenu li a {
 #footer a:hover {
 	text-decoration:underline;
 }
+.right{
+  min-height: 500px;
+}
+
 #footer .right {
 	width:450px;
 	float:right;
@@ -357,7 +361,6 @@ hr {
 /*right column*/
 
 .side_box {
-	border-bottom:2px solid #674d2a;
 	padding-bottom:3px;
 	margin-bottom:10px;
 }

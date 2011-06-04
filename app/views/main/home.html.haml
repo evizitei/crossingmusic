@@ -2,9 +2,15 @@
   %h1 Welcome to The Crossing Music
   %br
   /=raw(@home_presenter.news_feed)
+  :javascript
+    $(document).ready(function() {
+      $('#twitter_container').twit("crossingmusic",{limit: 5});
+    });
+  .side_box
+    #twitter_container
+    %hr.clear
   %br
   %br
-  %audio#audioplayer{:autoplay=>"true",:loop=>"true",:controls=>"true",:style=>"width:424px;"}
-    %source{:src=>"http://mp3.crossingsongs.com.s3.amazonaws.com/fixed/home_sample.mp3"}
-  //%embed{:src=>"http://mp3.crossingsongs.com.s3.amazonaws.com/fixed/home_sample.mp3",:loop=>'true',:autoplay=>'true',:width=>'145',:height=>'15'}
+  #mp3_widget
+    = raw(google_mp3_player "http://mp3.crossingsongs.com.s3.amazonaws.com/fixed/Forever_Home_Streaming_Sample.mp3")
 .right=render(:partial=>"aside_about")

@@ -19,7 +19,7 @@ Crossingmusic::Application.routes.draw do |map|
   
   resources :user_sessions
 
-  match "/", :to => "main#home"
+  match "/", :to => "albums#index"
   match "/about", :to => "main#about"
   match "/contact", :to => "main#contact",:as=>:contact_us
   match "login" => "user_sessions#new",:as=>:login
