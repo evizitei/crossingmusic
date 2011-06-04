@@ -11,4 +11,6 @@
     %h3 Track List
     %ul#song_list
     - album.songs.each_with_index do |song,idx|
-      %li.song= "#{idx + 1}) #{song.name}"
+      %li.song
+        = "#{idx + 1}) #{song.name}"
+        =link_to "Listen",song_path(song)
