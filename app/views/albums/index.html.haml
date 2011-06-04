@@ -8,6 +8,7 @@
         %li.album
           =link_to album do
             =image_tag album.cover.url(:thumb)
+          %br
           =link_to album.name,album
           -if current_user
             \--    

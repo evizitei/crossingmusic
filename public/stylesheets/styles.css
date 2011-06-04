@@ -647,6 +647,8 @@ ul.ticklist li {
 #discography {
   clear: both;
   margin-top: 10px; }
+  #discography #albums {
+    list-style: none; }
 
 .full {
   width: 100%; }
