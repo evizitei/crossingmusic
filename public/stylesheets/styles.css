@@ -42,7 +42,7 @@ a:hover {
   /*change this width and height to match your logo image*/
   height: 46px;
   float: left;
-  margin: 23px 0 0 15px; }
+  margin: 8px 0 0 15px; }
 
 /*MENU*/
 #menucontainer {
@@ -104,7 +104,7 @@ a:hover {
 #banner {
   width: 889px;
   height: 331px;
-  margin: 0px auto 20px auto; }
+  margin: 15px auto 20px auto; }
 
 .slide_container {
   width: 889px;

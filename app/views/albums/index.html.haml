@@ -1,11 +1,13 @@
 .full
   %h1 The Crossing Music Albums
-  =render "display",:album=>@albums.delete_at(0)
+  =render "display",:album=>@albums.first
   #discography
     %h3 Discography
     %ul#albums
       -@albums.each do |album|
         %li.album
+          =link_to album do
+            =image_tag album.cover.url(:thumb)
           =link_to album.name,album
           -if current_user
             \--    
